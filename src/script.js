@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- 2. Interactive Shape (Hover) ---
   shape?.addEventListener("mouseenter", () => {
-    shapeText?.classList.remove("text-gray-300");
+    shapeText?.classList.remove("text-gray-300", "dark:text-gray-600");
     shapeText?.classList.add(
       "text-blue-600",
       "animate-pulse",
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
   shape?.addEventListener("mouseleave", () => {
-    shapeText?.classList.add("text-gray-300");
+    shapeText?.classList.add("text-gray-300", "dark:text-gray-600");
     shapeText?.classList.remove(
       "text-blue-600",
       "animate-pulse",
