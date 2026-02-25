@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khaled Megahed</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./public/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./public/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./public/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./public/favicon/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <header
+      class="bg-white/30 dark:bg-black/30 text-black dark:text-white backdrop-blur-md sticky top-0 z-50 border-b border-white/20 dark:border-white/10 shadow-lg shadow-blue-300/20 dark:shadow-none"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between p-4 px-6">
+        <div class="w-48">
+          <a
+            href="#"
+            class="font-bold text-lg tracking-tighter hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          >
+            Khaled Megahed
+          </a>
+        </div>
+
+        <nav class="hidden md:block">
+          <ul class="flex space-x-8 items-center font-medium">
+            <li>
+              <a
+                href="#home"
+                class="nav-link hover:text-blue-500 transition-colors duration-300 active"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="nav-link hover:text-blue-500 transition-colors duration-300"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="nav-link hover:text-blue-500 transition-colors duration-300"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="#services"
+                class="nav-link hover:text-blue-500 transition-colors duration-300"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="nav-link hover:text-blue-500 transition-colors duration-300"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="w-48 flex justify-end items-center gap-4">
+          <button
+            id="dark-toggle"
+            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors border border-transparent dark:border-white/10"
+            aria-label="Toggle Theme"
+          >
+            <span class="dark:hidden">🌙</span>
+            <span class="hidden dark:block">☀️</span>
+          </button>
+          <a
+            class="hidden bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 px-6 py-2 rounded-full text-[10px] uppercase font-bold tracking-widest transition-all shadow-none pointer-events-none cursor-not-allowed md:block"
+          >
+            CV
+          </a>
+
+          <button
+            id="menu-btn"
+            class="group flex md:hidden flex-col justify-center items-center w-10 h-10 space-y-1.5 z-[100] relative cursor-pointer focus:outline-none"
+          >
+            <span
+              id="line1"
+              class="block w-6 h-0.5 bg-black dark:bg-white transition-all duration-300"
+            ></span>
+            <span
+              id="line2"
+              class="block w-6 h-0.5 bg-black dark:bg-white transition-all duration-300"
+            ></span>
+            <span
+              id="line3"
+              class="block w-6 h-0.5 bg-black dark:bg-white transition-all duration-300"
+            ></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-[90] flex justify-end opacity-0 pointer-events-none transition-all duration-500 ease-in-out"
+    >
+      <div
+        id="overlay"
+        class="fixed inset-0 bg-black/10 dark:bg-black/40 backdrop-blur-md transition-opacity duration-300"
+      ></div>
+
+      <nav
+        id="mobile-nav"
+        class="relative w-full h-screen bg-white/95 dark:bg-gray-900/95 flex flex-col items-center justify-center p-8 text-black dark:text-white"
+      >
+        <ul class="text-center space-y-8">
+          <li>
+            <a
+              href="#home"
+              class="mobile-link text-4xl font-bold tracking-tighter hover:text-blue-600 block uppercase"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="mobile-link text-4xl font-bold tracking-tighter hover:text-blue-600 block uppercase"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="mobile-link text-4xl font-bold tracking-tighter hover:text-blue-600 block uppercase"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#services"
+              class="mobile-link text-4xl font-bold tracking-tighter hover:text-blue-600 block uppercase"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="mobile-link text-4xl font-bold tracking-tighter hover:text-blue-600 block uppercase"
+              >Contact</a
+            >
+          </li>
+          <li class="pt-6">
+            <a
+              class="bg-gray-300 dark:bg-gray-800 text-gray-500 dark:text-gray-500 px-10 py-4 rounded-full text-xs uppercase font-bold tracking-widest transition-all shadow-none pointer-events-none cursor-not-allowed inline-block"
+            >
+              CV
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main class="text-black dark:text-white">
+      <section
+        id="home"
+        class="relative min-h-screen flex items-center overflow-hidden pt-20 px-6"
+      >
+        <div
+          class="absolute top-0 -left-4 w-72 h-72 bg-blue-400/20 dark:bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"
+        ></div>
+        <div
+          class="absolute bottom-10 right-0 w-96 h-96 bg-indigo-400/20 dark:bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none"
+        ></div>
+
+        <div
+          class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+        >
+          <div class="z-10 order-2 lg:order-1">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold tracking-widest uppercase mb-6 border border-blue-200 dark:border-blue-800"
+            >
+              <span class="relative flex h-2 w-2">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"
+                ></span>
+              </span>
+              Available for new projects
+            </div>
+
+            <h1
+              class="text-6xl md:text-8xl font-black tracking-tight leading-[0.9] mb-8"
+            >
+              Crafting
+              <span class="text-blue-600 dark:text-blue-500">Digital</span>
+              Mastery.
+            </h1>
+
+            <p
+              class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed mb-10"
+            >
+              I’m
+              <span class="font-semibold text-black dark:text-white"
+                >Khaled Megahed</span
+              >, a Frontend Developer focused on building high-end interfaces
+              that blend aesthetic precision with technical excellence.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#projects"
+                class="group relative px-8 py-4 bg-gray-900 dark:bg-blue-600 text-white rounded-2xl font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-blue-500/20 overflow-hidden text-center"
+              >
+                <span class="relative z-10">View My Work</span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity"
+                ></div>
+              </a>
+              <a
+                href="#contact"
+                class="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-2xl font-bold transition-all hover:bg-gray-50 dark:hover:bg-gray-700 text-center"
+              >
+                Let's Collaborate
+              </a>
+            </div>
+
+            <div
+              class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-10"
+            >
+              <p
+                class="text-sm font-bold uppercase tracking-widest text-gray-400"
+              >
+                Main Stack <span class="hidden sm:inline-block ml-2">|</span>
+              </p>
+              <div class="flex flex-wrap gap-6 items-center text-3xl">
+                <span
+                  title="HTML5"
+                  class="w-10 h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
+                >
+                  <svg
+                    class="w-full h-full text-[#E34F26] drop-shadow-md"
+                    fill="currentColor"
+                    viewBox="0 0 384 512"
+                  >
+                    <path
+                      d="M0 32L34.9 427.8 191.5 480 349.1 427.8 384 32 0 32zM308.2 159.9l-183.8 0 4.1 49.4 175.6 0-13.6 148.4-97.9 27 0 .3-1.1 0-98.7-27.3-6-75.8 47.7 0 3.5 38.1 53.5 14.5 53.7-14.5 6-62.2-166.9 0-12.8-145.6 241.1 0-4.4 47.7z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  title="CSS3"
+                  class="w-10 h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
+                >
+                  <svg
+                    class="w-full h-full text-[#1572B6] drop-shadow-md"
+                    fill="currentColor"
+                    viewBox="0 0 384 512"
+                  >
+                    <path
+                      d="M0 32L34.9 427.8 192 480 349.1 427.8 384 32 0 32zm313.1 80l-4.8 47.3-115.3 49.3-.3 .1 111.5 0-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9 48.9 0 3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5 0-.1-.2 .1-3.6-46.3 112.1-46.7 6.5-2.7-122.9 0-5.8-47.3 242.2 0z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  title="JavaScript"
+                  class="w-10 h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
+                >
+                  <svg
+                    class="w-full h-full text-[#F7DF1E] drop-shadow-md"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M0 32l0 448 448 0 0-448-448 0zM243.8 381.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5L152 385.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5l0-143.1 42.1 0 0 143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43L301 382.1c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  title="Tailwind"
+                  class="w-10 h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
+                >
+                  <svg
+                    class="w-full h-full text-[#06B6D4] drop-shadow-md"
+                    fill="currentColor"
+                    viewBox="0 0 640 512"
+                  >
+                    <path
+                      d="M320 64c-85.3 0-138.7 42.7-160 128 32-42.7 69.3-58.7 112-48 24.3 6.1 41.7 23.8 61 43.3 31.4 31.8 67.7 68.7 147 68.7 85.3 0 138.7-42.7 160-128-32 42.7-69.3 58.7-112 48-24.3-6.1-41.7-23.8-61-43.3-31.4-31.8-67.7-68.7-147-68.7zM160 256c-85.3 0-138.7 42.7-160 128 32-42.7 69.3-58.7 112-48 24.3 6.1 41.7 23.8 61 43.3 31.4 31.8 67.7 68.7 147 68.7 85.3 0 138.7-42.7 160-128-32 42.7-69.3 58.7-112 48-24.3-6.1-41.7-23.8-61-43.3-31.4-31.8-67.7-68.7-147-68.7z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  title="TypeScript"
+                  class="w-10 h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
+                >
+                  <svg
+                    class="w-full h-full text-[#3178C6] drop-shadow-md"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M16.8 32l414.4 0c9.3 0 16.8 7.5 16.8 16.8l0 414.4c0 9.3-7.5 16.8-16.8 16.8L16.8 480C7.5 480 0 472.5 0 463.2L0 48.8C0 39.5 7.5 32 16.8 32zM249 270.3l0-36.7-159.4 0 0 36.7 56.9 0 0 163.6 45.3 0 0-163.6 57.2 0zm18.1 159.3c7.3 3.7 15.9 6.5 25.9 8.4s20.5 2.8 31.5 2.8c10.8 0 21-1 30.7-3.1s18.2-5.4 25.5-10.1 13.1-10.9 17.4-18.4 6.4-17 6.4-28.2c0-8.1-1.2-15.2-3.7-21.3s-5.9-11.5-10.5-16.3-10.1-9-16.5-12.8-13.7-7.3-21.7-10.7c-5.9-2.4-11.2-4.8-15.9-7.1s-8.7-4.6-11.9-7-5.8-4.9-7.6-7.5-2.7-5.7-2.7-9c0-3.1 .8-5.8 2.4-8.3s3.8-4.6 6.7-6.4 6.5-3.1 10.7-4.1 8.9-1.5 14.1-1.5c3.7 0 7.7 .3 11.9 .8s8.4 1.4 12.6 2.6 8.3 2.6 12.3 4.4 7.7 3.8 11 6.1l0-41.8c-6.8-2.6-14.3-4.5-22.4-5.8s-17.4-1.9-27.9-1.9c-10.7 0-20.8 1.1-30.4 3.4s-18 5.8-25.2 10.7-13 11-17.2 18.5-6.3 16.5-6.3 26.9c0 13.3 3.9 24.7 11.6 34.1s19.5 17.4 35.2 23.9c6.2 2.5 11.9 5 17.3 7.4s10 4.9 13.8 7.5 7 5.4 9.2 8.5 3.4 6.6 3.4 10.5c0 2.9-.7 5.6-2.1 8s-3.5 4.6-6.4 6.4-6.4 3.2-10.7 4.3-9.3 1.5-15 1.5c-9.7 0-19.4-1.7-28.9-5.1s-18.4-8.5-26.6-15.3l0 44.7z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="relative hidden lg:flex justify-center items-center order-1 lg:order-2"
+          >
+            <div
+              class="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
+            ></div>
+
+            <div class="relative w-full h-[500px]">
+              <div
+                id="shape"
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-80 bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700 p-4 rotate-3 hover:rotate-0 transition-transform duration-500 z-20"
+              >
+                <div
+                  class="w-full h-full bg-gray-100 dark:bg-gray-700 rounded-2xl flex items-center justify-center"
+                >
+                  <span
+                    id="shape-text"
+                    class="text-6xl font-black text-gray-300 dark:text-gray-600 transition-all duration-1000"
+                    >KM</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="py-24 px-6 relative bg-white dark:bg-[#0a0c10] overflow-hidden"
+      >
+        <div
+          class="absolute -right-20 top-20 text-[12rem] font-black text-gray-100/50 dark:text-gray-900/10 select-none pointer-events-none uppercase tracking-tighter"
+        >
+          Story
+        </div>
+
+        <div class="max-w-6xl mx-auto relative">
+          <div class="mb-24 text-center md:text-left">
+            <h2
+              class="text-6xl md:text-8xl font-black tracking-tighter text-gray-900 dark:text-white leading-none"
+            >
+              My
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500"
+                >Evolution.</span
+              >
+            </h2>
+            <div
+              class="mt-6 flex items-center gap-4 justify-center md:justify-start"
+            >
+              <div class="h-[2px] w-12 bg-blue-600"></div>
+              <p
+                class="text-gray-500 font-medium tracking-wide uppercase text-sm"
+              >
+                The journey from "Hello World" to architecting systems
+              </p>
+            </div>
+          </div>
+
+          <div class="relative ml-4 md:ml-0">
+            <div
+              class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 h-full w-[2px] bg-gradient-to-b from-blue-600 via-indigo-500 to-transparent opacity-20 dark:opacity-40"
+            ></div>
+
+            <div class="mb-32 relative flex flex-col md:flex-row items-center">
+              <div
+                class="absolute left-[-9px] md:left-1/2 md:-translate-x-1/2 top-0 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white dark:ring-[#0a0c10] shadow-[0_0_20px_rgba(37,99,235,0.6)] z-10"
+              ></div>
+
+              <div class="md:w-1/2 md:pr-16 pl-10 md:pl-0 md:text-right">
+                <div
+                  class="p-8 rounded-3xl bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 hover:border-blue-500/30 transition-colors group"
+                >
+                  <span
+                    class="text-xs font-black text-blue-500 uppercase tracking-[0.3em]"
+                  >
+                    01</span
+                  >
+                  <h3
+                    class="text-3xl font-bold mt-2 mb-4 text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors"
+                  >
+                    The Spark of Curiosity
+                  </h3>
+                  <p
+                    class="text-gray-600 dark:text-gray-400 leading-relaxed italic text-lg border-l-4 md:border-l-0 md:border-r-4 border-blue-600/30 pl-4 md:pl-0 md:pr-4 mb-4"
+                  >
+                    "It started with a simple idea: what if I could build my own
+                    game? Watching characters move because of code I wrote
+                    changed everything." What began as curiosity about game
+                    development quickly became a passion for programming. I
+                    wanted to understand how things work, how logic creates
+                    movement, and how ideas turn into interactive experiences."
+                  </p>
+                </div>
+              </div>
+              <div class="hidden md:block md:w-1/2"></div>
+            </div>
+
+            <div class="mb-32 relative flex flex-col md:flex-row items-center">
+              <div
+                class="absolute left-[-9px] md:left-1/2 md:-translate-x-1/2 top-0 w-4 h-4 rounded-full bg-indigo-500 ring-4 ring-white dark:ring-[#0a0c10] shadow-[0_0_20px_rgba(99,102,241,0.6)] z-10"
+              ></div>
+
+              <div class="hidden md:block md:w-1/2"></div>
+              <div class="md:w-1/2 pl-10 md:pl-0">
+                <div
+                  class="p-8 rounded-3xl bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 hover:border-indigo-500/30 transition-colors group"
+                >
+                  <span
+                    class="text-xs font-black text-indigo-500 uppercase tracking-[0.3em]"
+                  >
+                    02</span
+                  >
+                  <h3
+                    class="text-3xl font-bold mt-2 mb-4 text-gray-900 dark:text-white group-hover:text-indigo-500 transition-colors"
+                  >
+                    The Found Path
+                  </h3>
+                  <p
+                    class="text-gray-600 dark:text-gray-400 leading-relaxed md:border-l-4 border-blue-600/30 md:pr-0 md:pl-4 mb-4"
+                  >
+                    Then I discovered
+                    <span class="text-indigo-500 font-bold"
+                      >web development</span
+                    >
+                    — and something just felt right. The browser became my new
+                    playground. Instead of building worlds inside a game, I was
+                    building experiences anyone could access with a single
+                    click. I became curious about how websites respond, move,
+                    and feel so smooth. That’s when I dove into JavaScript and
+                    React — not just to learn them, but to understand how to
+                    make a site feel alive.
+                  </p>
+                  <div class="mt-6 flex gap-3 flex-wrap"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative flex flex-col md:flex-row items-center">
+              <div
+                class="absolute left-[-9px] md:left-1/2 md:-translate-x-1/2 top-0 w-4 h-4 rounded-full bg-green-500 ring-4 ring-white dark:ring-[#0a0c10] shadow-[0_0_20px_rgba(34,197,94,0.6)] z-10"
+              ></div>
+
+              <div class="md:w-1/2 md:pr-16 pl-10 md:pl-0 md:text-right">
+                <div
+                  class="p-8 rounded-3xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-2xl shadow-blue-500/20"
+                >
+                  <span
+                    class="text-xs font-black text-blue-200 uppercase tracking-[0.3em]"
+                  >
+                    03</span
+                  >
+                  <h3 class="text-3xl font-bold mt-2 mb-4">
+                    From Curiosity to Clarity
+                  </h3>
+                  <p class="opacity-90 leading-relaxed">
+                    Today, I bridge the gap between design and engineering. What
+                    began as curiosity has evolved into a mission: architecting
+                    scalable systems from the ground up. I don't just build
+                    interfaces; I engineer high-performance experiences where
+                    every detail is optimized for growth. Now, I turn ambitious
+                    ideas into future-proof digital foundations—built not just
+                    for today, but for what’s next.
+                  </p>
+                  <a
+                    href="#contact"
+                    class="inline-flex items-center gap-2 mt-6 text-sm font-bold bg-white text-blue-600 px-6 py-3 rounded-xl hover:bg-gray-100 transition-colors"
+                  >
+                    Start a new chapter with me
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="hidden md:block md:w-1/2"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        class="py-32 px-6 bg-[#fcfcfc] dark:bg-[#0a0c10] overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="flex flex-col md:flex-row justify-between items-end mb-32 border-b border-black dark:border-white pb-8"
+          >
+            <h2
+              class="text-8xl md:text-[12rem] font-serif italic leading-none tracking-tighter"
+            >
+              Projects
+            </h2>
+          </div>
+
+          <div class="relative grid grid-cols-12 gap-4 group">
+            <div
+              class="col-span-12 md:col-span-8 overflow-hidden aspect-[16/10] bg-gray-100 dark:bg-gray-900"
+            >
+              <img
+                src="./public/imgs/AZM.png"
+                alt="Azm Project"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-[1.5s] ease-out group-hover:scale-105"
+              />
+            </div>
+
+            <div
+              class="col-span-12 md:col-span-6 md:absolute md:-bottom-20 md:-right-12 z-10 bg-white dark:bg-[#0d0f14] p-10 md:p-14 shadow-[40px_40px_80px_-20px_rgba(0,0,0,0.2)] dark:shadow-none dark:border dark:border-gray-800 transition-all duration-700 group-hover:translate-x-4"
+            >
+              <div class="mb-8">
+                <span
+                  class="text-[10px] font-bold uppercase tracking-[0.5em] text-blue-600 border-b-2 border-blue-600 pb-1"
+                >
+                  Project 01
+                </span>
+              </div>
+
+              <h3
+                class="text-6xl md:text-7xl font-serif italic mb-8 leading-tight text-gray-900 dark:text-white"
+              >
+                Azm
+                <span
+                  class="not-italic text-3xl text-gray-300 dark:text-gray-700 block mt-2 font-sans"
+                  >عزم</span
+                >
+              </h3>
+
+              <p
+                class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-10 max-w-sm ml-auto text-right border-r-2 border-gray-100 dark:border-gray-800 pr-6 font-light"
+              >
+                A sophisticated architecture for task prioritization. By
+                implementing the
+                <span class="text-black dark:text-white font-semibold"
+                  >Eisenhower Matrix</span
+                >, Azm transforms simple to-do lists into strategic roadmaps.
+              </p>
+
+              <div class="flex flex-wrap justify-end gap-3 mb-12">
+                <span
+                  class="text-[9px] font-mono px-2 py-1 border border-gray-200 dark:border-gray-700 text-gray-500 uppercase"
+                  >MVC Architecture</span
+                >
+                <span
+                  class="text-[9px] font-mono px-2 py-1 border border-gray-200 dark:border-gray-700 text-gray-500 uppercase"
+                  >Vanilla JS</span
+                >
+                <span
+                  class="text-[9px] font-mono px-2 py-1 border border-gray-200 dark:border-gray-700 text-gray-500 uppercase"
+                  >Tailwind</span
+                >
+              </div>
+
+              <div
+                class="flex items-center justify-end gap-8 pt-8 border-t border-gray-100 dark:border-gray-800"
+              >
+                <a
+                  target="_blank"
+                  href="https://github.com/Khaled-Megahed/azm-app"
+                  class="group/btn flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-black dark:hover:text-white transition-all"
+                >
+                  <svg
+                    class="w-5 h-5 transition-transform group-hover/btn:-rotate-12"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  <span>Source</span>
+                </a>
+
+                <a
+                  target="_blank"
+                  href="https://azm-app.netlify.app/"
+                  class="group/btn flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-black dark:text-white"
+                >
+                  <span>Live View</span>
+                  <svg
+                    class="w-5 h-5 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="py-32 px-6 bg-white dark:bg-[#0a0c10]">
+        <div class="max-w-7xl mx-auto">
+          <div class="mb-24">
+            <h2
+              class="text-7xl md:text-9xl font-serif italic mt-4 tracking-tighter"
+            >
+              The Services.
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div
+              class="group border-t border-black dark:border-white pt-10 transition-all duration-500"
+            >
+              <h3 class="text-4xl font-serif italic mb-6">
+                design to <br />code.
+              </h3>
+              <p class="text-sm text-gray-500 leading-relaxed mb-8">
+                Specializing in pixel-perfect implementation. I take your
+                <strong>Figma</strong> designs and translate them into clean,
+                semantic, and high-performance codebases.
+              </p>
+              <ul
+                class="space-y-2 text-[10px] font-bold uppercase tracking-widest text-gray-400"
+              >
+                <li>→ Responsive Layouts</li>
+                <li>→ Interaction Logic</li>
+                <li>→ Pixel Fidelity</li>
+              </ul>
+            </div>
+
+            <div
+              class="group border-t border-black dark:border-white pt-10 md:mt-32 transition-all duration-500"
+            >
+              <h3 class="text-4xl font-serif italic mb-6">
+                landing <br />pages.
+              </h3>
+              <p class="text-sm text-gray-500 leading-relaxed mb-8">
+                Building high-impact <strong>Landing Pages</strong> designed to
+                convert. Focused on sub-second load times and an impeccable
+                first impression.
+              </p>
+              <ul
+                class="space-y-2 text-[10px] font-bold uppercase tracking-widest text-gray-400"
+              >
+                <li>→ Conversion Focus</li>
+                <li>→ Motion Branding</li>
+                <li>→ SEO Optimization</li>
+              </ul>
+            </div>
+
+            <div
+              class="group border-t border-black dark:border-white pt-10 transition-all duration-500"
+            >
+              <h3 class="text-4xl font-serif italic mb-6">
+                websites <br />Refinement.
+              </h3>
+              <p class="text-sm text-gray-500 leading-relaxed mb-8">
+                Maintaining and <strong>Refactoring</strong> existing sites.
+                From technical audits to feature expansions, I ensure your
+                system evolves without design debt.
+              </p>
+              <ul
+                class="space-y-2 text-[10px] font-bold uppercase tracking-widest text-gray-400"
+              >
+                <li>→ Technical Audits</li>
+                <li>→ UI Enhancements</li>
+                <li>→ Code Refactoring</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        class="py-32 px-6 bg-[#fcfcfc] dark:bg-[#0a0c10] overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto">
+          <div class="relative">
+            <h2
+              class="text-[12rem] md:text-[22rem] font-serif italic text-gray-100 dark:text-gray-900 leading-none select-none absolute -top-20 -left-10 z-0"
+            >
+              Connect.
+            </h2>
+
+            <div
+              class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-20 items-end"
+            >
+              <div>
+                <h3
+                  class="text-6xl md:text-8xl font-serif italic mb-12 tracking-tighter"
+                >
+                  Let's build the <br />foundation.
+                </h3>
+
+                <div class="space-y-8">
+                  <a
+                    href="mailto:khaled00megahed@gmail.com"
+                    class="group block"
+                  >
+                    <span
+                      class="text-xs font-mono text-gray-400 uppercase tracking-widest"
+                      >Email</span
+                    >
+                    <p
+                      class="text-2xl font-medium group-hover:text-blue-600 transition-colors"
+                    >
+                      khaled00Megahed@gmail.com
+                    </p>
+                  </a>
+
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/in/khaled-megahed0"
+                    class="group block"
+                  >
+                    <span
+                      class="text-xs font-mono text-gray-400 uppercase tracking-widest"
+                      >Social</span
+                    >
+                    <p
+                      class="text-2xl font-medium group-hover:text-blue-600 transition-colors"
+                    >
+                      LinkedIn
+                    </p>
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="border-l border-gray-200 dark:border-gray-800 pl-12 pb-2"
+              >
+                <p
+                  class="text-sm text-gray-500 leading-relaxed mb-12 max-w-xs font-light"
+                >
+                  Currently accepting select freelance commissions. Based in
+                  Egypt, working worldwide.
+                </p>
+
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center gap-3">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span
+                      class="text-[10px] font-mono uppercase tracking-widest"
+                      >Available for hire</span
+                    >
+                  </div>
+                  <div
+                    class="text-[10px] font-mono text-gray-400 uppercase tracking-widest"
+                  >
+                    Timezone: GMT+2 (Cairo)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="py-12 px-6 border-t border-gray-100 dark:border-gray-900 bg-white dark:bg-[#0a0c10]"
+    >
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <div class="flex items-center gap-4">
+          <span class="text-lg font-serif italic tracking-tighter"
+            >K. Megahed</span
+          >
+          <span
+            class="h-4 w-[1px] bg-gray-300 dark:bg-gray-800 hidden md:block"
+          ></span>
+          <span
+            class="text-[9px] font-mono uppercase tracking-[0.3em] text-gray-400"
+            >2026</span
+          >
+        </div>
+
+        <div
+          class="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-500"
+        >
+          <a
+            href="https://github.com/Khaled-Megahed"
+            class="hover:text-blue-600 transition-colors"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/khaled-megahed0"
+            class="hover:text-blue-600 transition-colors"
+            >LinkedIn</a
+          >
+          <a
+            href="mailto:khaled00Megahed@gmail.com"
+            class="hover:text-blue-600 transition-colors"
+            >Email</a
+          >
+        </div>
+
+        <p class="text-[9px] font-mono uppercase tracking-widest text-gray-400">
+          © All Rights Reserved
+        </p>
+      </div>
+    </footer>
+    <script type="module" src="./src/script.js"></script>
+  </body>
+</html>
