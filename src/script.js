@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- 3. Optimized Scroll-Spy & Reveal ---
   // Threshold adjusted to 0.5 so it switches active link when section is half-visible
-  const observerOptions = { threshold: 0.3, rootMargin: "-10% 0px -20% 0px" };
+  const observerOptions = { threshold: 0.15, rootMargin: "0px" };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

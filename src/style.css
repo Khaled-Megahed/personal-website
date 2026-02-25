@@ -11,10 +11,8 @@ html {
 .reveal-hidden {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1);
-  will-change: transform, opacity;
+  transition: all 0.8s ease-out;
 }
-
 .reveal-visible {
   opacity: 1;
   transform: translateY(0);
