@@ -7,11 +7,13 @@
 /* --- 1. Core Page & Global Styles --- */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* Removed overflow-x from here to prevent breaking sticky elements */
 }
 
 body {
   @apply bg-white dark:bg-[#0a0c10] transition-colors duration-300;
+  overflow-x: hidden; /* Moved overflow-x to body for better sticky support */
+  position: relative;
 }
 
 /* --- 2. Project Spacing Logic (Filtering) --- */
@@ -161,6 +163,14 @@ body {
 }
 
 /* --- 6. Navigation Styles --- */
+header {
+  /* Ensure header always overrides any reveal-hidden accidental application */
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  z-index: 50;
+}
+
 .logo-k {
   font-family: "Leckerli One", cursive;
   font-weight: 400;
