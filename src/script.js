@@ -1,5 +1,57 @@
+/**
+ * Global Filter Function
+ * Handles category switching and dynamic spacing via the 'is-visible' class.
+ * Must be outside DOMContentLoaded for HTML onclick access.
+ */
+window.filterProjects = function (category) {
+  const items = document.querySelectorAll(".project-item");
+  const buttons = document.querySelectorAll(".filter-btn");
+
+  // 1. Update Navigation Button UI
+  buttons.forEach((btn) => {
+    const isTarget = btn.getAttribute("onclick").includes(`'${category}'`);
+
+    btn.classList.toggle("border-black", isTarget);
+    btn.classList.toggle("dark:border-white", isTarget);
+    btn.classList.toggle("text-black", isTarget);
+    btn.classList.toggle("dark:text-white", isTarget);
+    btn.classList.toggle("border-transparent", !isTarget);
+    btn.classList.toggle("text-gray-400", !isTarget);
+  });
+
+  // 2. Animate and Filter Project Items
+  items.forEach((item) => {
+    // Exit Animation
+    item.style.opacity = "0";
+    item.style.transform = "translateY(20px) scale(0.98)";
+    item.style.pointerEvents = "none";
+
+    // Remove visibility class to trigger CSS margin recalculation
+    item.classList.remove("is-visible");
+
+    setTimeout(() => {
+      const match =
+        category === "all" || item.getAttribute("data-category") === category;
+
+      if (match) {
+        item.style.display = "grid";
+        item.classList.add("is-visible");
+
+        // Entrance Animation
+        setTimeout(() => {
+          item.style.opacity = "1";
+          item.style.transform = "translateY(0) scale(1)";
+          item.style.pointerEvents = "auto";
+        }, 50);
+      } else {
+        item.style.display = "none";
+      }
+    }, 400);
+  });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Elements - Using optional chaining later to prevent errors if an ID is missing
+  // --- Elements Selection ---
   const menuBtn = document.getElementById("menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
   const mobileNav = document.getElementById("mobile-nav");
@@ -10,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("line1"),
     document.getElementById("line2"),
     document.getElementById("line3"),
-  ].filter((el) => el !== null); // Ensure lines exist before animating
+  ].filter((el) => el !== null);
 
   const mobileLinks = document.querySelectorAll(".mobile-link");
   const navLinks = document.querySelectorAll(".nav-link");
@@ -46,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "[text-shadow:0_0_20px_rgba(59,130,246,0.8)]",
     );
   });
+
   shape?.addEventListener("mouseleave", () => {
     shapeText?.classList.add("text-gray-300", "dark:text-gray-600");
     shapeText?.classList.remove(
@@ -56,16 +109,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // --- 3. Optimized Scroll-Spy & Reveal ---
-  // Threshold adjusted to 0.5 so it switches active link when section is half-visible
   const observerOptions = { threshold: 0.15, rootMargin: "0px" };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Feature: Show-up animation
         entry.target.classList.add("reveal-visible");
 
-        // Feature: Active Link Update
         const id = entry.target.getAttribute("id");
         if (id) {
           navLinks.forEach((link) =>
@@ -90,17 +140,18 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(section);
   });
 
-  // --- 4. Mobile Menu Logic (Fixed Toggling) ---
+  // --- 4. Mobile Menu Logic ---
   const toggleMenu = (forceClose = false) => {
     const isOpening = forceClose
       ? false
-      : !mobileMenu.classList.contains("opacity-100");
+      : !mobileMenu?.classList.contains("opacity-100");
 
-    mobileMenu.classList.toggle("opacity-100", isOpening);
-    mobileMenu.classList.toggle("pointer-events-auto", isOpening);
-    document.body.style.overflow = isOpening ? "hidden" : "auto";
+    if (mobileMenu) {
+      mobileMenu.classList.toggle("opacity-100", isOpening);
+      mobileMenu.classList.toggle("pointer-events-auto", isOpening);
+      document.body.style.overflow = isOpening ? "hidden" : "auto";
+    }
 
-    // Hamburger Animation (Only if 3 lines exist)
     if (lines.length === 3) {
       lines[0].style.transform = isOpening
         ? "translateY(8px) rotate(45deg)"
@@ -120,18 +171,21 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleMenu();
   });
 
-  // Close menu when clicking overlay or links
   overlay?.addEventListener("click", () => toggleMenu(true));
   mobileLinks.forEach((link) =>
     link.addEventListener("click", () => toggleMenu(true)),
   );
+  mobileNav?.addEventListener("click", () => toggleMenu(true));
 
-  // Escape key support
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && mobileMenu?.classList.contains("opacity-100"))
+    if (e.key === "Escape" && mobileMenu?.classList.contains("opacity-100")) {
       toggleMenu(true);
+    }
   });
-  mobileNav.addEventListener("click", () => {
-    toggleMenu(true);
+
+  // --- 5. Project Initialization ---
+  // Ensures initial spacing is correct on page load
+  document.querySelectorAll(".project-item").forEach((item) => {
+    item.classList.add("is-visible");
   });
 });
