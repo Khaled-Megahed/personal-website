@@ -185,7 +185,7 @@
     <main class="text-black dark:text-white">
       <section
         id="home"
-        class="relative min-h-screen flex items-center overflow-hidden pt-20 px-6"
+        class="relative min-h-screen flex items-center overflow-hidden pt-5 sm:pt-20 px-6"
       >
         <div
           class="absolute top-0 -left-4 w-72 h-72 bg-blue-400/20 dark:bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"
@@ -348,8 +348,8 @@
                 >
                   <span
                     id="shape-text"
-                    class="text-6xl font-black text-gray-300 dark:text-gray-600 transition-all duration-1000"
-                    >KM</span
+                    class="text-8xl font-black text-gray-300 dark:text-gray-600 transition-all duration-1000"
+                    >K</span
                   >
                 </div>
               </div>
@@ -689,7 +689,7 @@
                     target="_blank"
                     href="https://the-peak-club.netlify.app/"
                     class="link"
-                    >View Work <span>→</span></a
+                    >Live Demo <span>→</span></a
                   >
                 </div>
               </div>
@@ -774,90 +774,93 @@
 
       <section
         id="contact"
-        class="py-32 px-6 bg-[#fcfcfc] dark:bg-[#0a0c10] overflow-hidden"
+        class="py-32 px-6 bg-[#fcfcfc] dark:bg-[#0a0c10] overflow-hidden relative"
       >
         <div class="max-w-7xl mx-auto">
           <div class="relative">
             <h2
-              class="text-[12rem] md:text-[22rem] font-serif italic text-gray-100 dark:text-gray-900 leading-none select-none absolute -top-20 -left-10 z-0"
+              class="text-[10rem] md:text-[22rem] font-serif italic text-gray-100 dark:text-gray-900/50 leading-none select-none absolute -top-32 -left-10 z-0 opacity-50 pointer-events-none"
             >
               Connect.
             </h2>
 
             <div
-              class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-20 items-end"
+              class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-end"
             >
               <div>
                 <h3
-                  class="text-6xl md:text-8xl font-serif italic mb-12 tracking-tighter"
+                  class="text-6xl md:text-8xl font-serif italic mb-12 tracking-tighter text-gray-900 dark:text-white"
                 >
                   Let's build the <br />foundation.
                 </h3>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
                   <a
                     href="mailto:khaled00megahed@gmail.com"
                     class="group block"
                   >
                     <span
-                      class="text-xs font-mono text-gray-400 uppercase tracking-widest"
+                      class="text-xs font-mono text-gray-400 uppercase tracking-widest block mb-2"
                       >Email</span
                     >
                     <p
-                      class="text-xl font-medium group-hover:text-blue-600 transition-colors truncate"
+                      class="text-xl font-medium group-hover:text-blue-600 transition-colors truncate dark:text-gray-200"
                     >
                       khaled00Megahed@gmail.com
                     </p>
                   </a>
 
-                  <a data-link="linkedin" class="group block cursor-pointer">
+                  <div class="group block">
                     <span
-                      class="text-xs font-mono text-gray-400 uppercase tracking-widest"
+                      class="text-xs font-mono text-gray-400 uppercase tracking-widest block mb-2"
                       >Social</span
                     >
-                    <p
-                      class="text-xl font-medium group-hover:text-blue-600 transition-colors"
+                    <a
+                      href="https://www.linkedin.com/in/khaled-megahed0"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-xl font-medium group-hover:text-blue-600 transition-colors dark:text-gray-200"
                     >
                       LinkedIn
-                    </p>
-                  </a>
+                    </a>
+                  </div>
 
                   <div class="sm:col-span-2 mt-4">
                     <span
-                      class="text-xs font-mono text-gray-400 uppercase tracking-widest block mb-4"
+                      class="text-xs font-mono text-gray-400 uppercase tracking-widest block mb-6"
                       >Freelance Platforms</span
                     >
-                    <div class="flex flex-wrap gap-6">
+                    <div class="flex flex-wrap gap-x-8 gap-y-4">
                       <a
                         href="https://www.upwork.com/freelancers/~018100558f8cf38181"
-                        data-link="upwork"
-                        class="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-green-600 transition-colors cursor-pointer"
+                        target="_blank"
+                        class="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-green-600 transition-colors dark:text-gray-300"
                       >
                         Upwork
                         <span
-                          class="text-[10px] opacity-0 group-hover:opacity-100 transition-opacity"
+                          class="text-[10px] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
                           >↗</span
                         >
                       </a>
                       <a
                         href="https://mostaql.com/u/Khaled_Megahed0"
-                        data-link="mostaql"
-                        class="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-blue-500 transition-colors cursor-pointer"
+                        target="_blank"
+                        class="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-blue-500 transition-colors dark:text-gray-300"
                       >
                         Mostaql
                         <span
-                          class="text-[10px] opacity-0 group-hover:opacity-100 transition-opacity"
+                          class="text-[10px] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
                           >↗</span
                         >
                       </a>
                       <a
                         href="https://khamsat.com/user/khaled_megahed0"
-                        data-link="khamsat"
-                        class="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-orange-500 transition-colors cursor-pointer"
+                        target="_blank"
+                        class="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-orange-500 transition-colors dark:text-gray-300"
                       >
                         Khamsat
                         <span
-                          class="text-[10px] opacity-0 group-hover:opacity-100 transition-opacity"
+                          class="text-[10px] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
                           >↗</span
                         >
                       </a>
@@ -867,17 +870,19 @@
               </div>
 
               <div
-                class="border-l border-gray-200 dark:border-gray-800 pl-12 pb-2"
+                class="border-l border-gray-200 dark:border-gray-800 pl-8 md:pl-12 pb-2"
               >
                 <p
-                  class="text-sm text-gray-500 leading-relaxed mb-12 max-w-xs font-light"
+                  class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-12 max-w-xs font-light"
                 >
                   Currently accepting select freelance commissions and full-time
                   frontend opportunities. Based in
-                  <strong>Mansoura, Egypt</strong>, working worldwide.
+                  <strong class="text-gray-900 dark:text-gray-200"
+                    >Mansoura, Egypt</strong
+                  >, working worldwide.
                 </p>
 
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-3">
                   <div class="flex items-center gap-3">
                     <span class="relative flex h-2 w-2">
                       <span
@@ -888,9 +893,10 @@
                       ></span>
                     </span>
                     <span
-                      class="text-[10px] font-mono uppercase tracking-widest"
-                      >Available for new projects</span
+                      class="text-[10px] font-mono uppercase tracking-widest dark:text-gray-300"
                     >
+                      Available for new projects
+                    </span>
                   </div>
                   <div
                     class="text-[10px] font-mono text-gray-400 uppercase tracking-widest"
