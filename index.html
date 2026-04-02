@@ -185,7 +185,7 @@
     <main class="text-black dark:text-white">
       <section
         id="home"
-        class="relative min-h-screen flex items-center overflow-hidden pt-5 sm:pt-20 px-6"
+        class="relative min-h-screen flex items-center overflow-hidden pt-12 pb-16 px-6 sm:pt-16 lg:pb-0"
       >
         <div
           class="absolute top-0 -left-4 w-72 h-72 bg-blue-400/20 dark:bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"
@@ -195,9 +195,39 @@
         ></div>
 
         <div
-          class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+          class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
         >
-          <div class="z-10 order-2 lg:order-1">
+          <div
+            class="relative flex justify-center items-center order-1 lg:order-2 w-full mb-12 lg:mb-0 z-20 -mt-16 lg:-mt-24"
+          >
+            <div
+              class="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px]"
+            >
+              <div
+                class="absolute inset-0 rounded-full bg-blue-500/40 blur-3xl animate-pulse"
+              ></div>
+              <div
+                class="absolute inset-[-15px] rounded-full border-2 border-blue-400/40 dark:border-blue-500/40 animate-[spin_8s_linear_infinite]"
+              ></div>
+              <div
+                class="absolute inset-[-30px] rounded-full border-2 border-dashed border-indigo-400/30 dark:border-indigo-500/30 animate-[spin_12s_linear_infinite_reverse]"
+              ></div>
+
+              <div
+                class="absolute inset-0 rounded-full bg-white dark:bg-gray-800 p-2 shadow-[0_0_40px_rgba(59,130,246,0.6)]"
+              >
+                <img
+                  src="./public/imgs/personal_img.jpg"
+                  alt="Khaled Megahed"
+                  class="w-full h-full object-cover rounded-full bg-gray-100 dark:bg-gray-700"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="z-10 order-2 lg:order-1 flex flex-col items-center text-center lg:items-start lg:text-left"
+          >
             <div
               class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold tracking-widest uppercase mb-6 border border-blue-200 dark:border-blue-800"
             >
@@ -213,15 +243,15 @@
             </div>
 
             <h1
-              class="text-6xl md:text-8xl font-black tracking-tight leading-[0.9] mb-8"
+              class="text-5xl sm:text-6xl md:text-8xl font-black tracking-tight leading-[1.1] md:leading-[0.9] mb-6 md:mb-8 text-black dark:text-white"
             >
-              Crafting
+              Crafting<br class="hidden md:block" />
               <span class="text-blue-600 dark:text-blue-500">Digital</span>
               Mastery.
             </h1>
 
             <p
-              class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed mb-10"
+              class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed mb-8 md:mb-10"
             >
               I’m
               <span class="font-semibold text-black dark:text-white"
@@ -230,10 +260,10 @@
               that blend aesthetic precision with technical excellence.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <a
                 href="#projects"
-                class="group relative px-8 py-4 bg-gray-900 dark:bg-blue-600 text-white rounded-2xl font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-blue-500/20 overflow-hidden text-center"
+                class="group relative px-8 py-4 bg-gray-900 dark:bg-blue-600 text-white rounded-2xl font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-blue-500/20 overflow-hidden text-center w-full sm:w-auto"
               >
                 <span class="relative z-10">View My Work</span>
                 <div
@@ -242,24 +272,26 @@
               </a>
               <a
                 href="#contact"
-                class="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-2xl font-bold transition-all hover:bg-gray-50 dark:hover:bg-gray-700 text-center"
+                class="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-2xl font-bold transition-all hover:bg-gray-50 dark:hover:bg-gray-700 text-center w-full sm:w-auto"
               >
                 Let's Collaborate
               </a>
             </div>
 
             <div
-              class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-10"
+              class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row items-center gap-6 mb-10 w-full"
             >
               <p
                 class="text-sm font-bold uppercase tracking-widest text-gray-400"
               >
                 Main Stack <span class="hidden sm:inline-block ml-2">|</span>
               </p>
-              <div class="flex flex-wrap gap-6 items-center text-3xl">
+              <div
+                class="flex flex-wrap justify-center sm:justify-start gap-6 items-center text-3xl"
+              >
                 <span
                   title="HTML5"
-                  class="w-10 h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
+                  class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
                 >
                   <svg
                     class="w-full h-full text-[#E34F26] drop-shadow-md"
@@ -273,7 +305,7 @@
                 </span>
                 <span
                   title="CSS3"
-                  class="w-10 h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
+                  class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
                 >
                   <svg
                     class="w-full h-full text-[#1572B6] drop-shadow-md"
@@ -287,7 +319,7 @@
                 </span>
                 <span
                   title="JavaScript"
-                  class="w-10 h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
+                  class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
                 >
                   <svg
                     class="w-full h-full text-[#F7DF1E] drop-shadow-md"
@@ -301,7 +333,7 @@
                 </span>
                 <span
                   title="Tailwind"
-                  class="w-10 h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
+                  class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
                 >
                   <svg
                     class="w-full h-full text-[#06B6D4] drop-shadow-md"
@@ -315,7 +347,7 @@
                 </span>
                 <span
                   title="TypeScript"
-                  class="w-10 h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
+                  class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-300 hover:scale-125 hover:-translate-y-1 cursor-pointer"
                 >
                   <svg
                     class="w-full h-full text-[#3178C6] drop-shadow-md"
@@ -327,31 +359,6 @@
                     />
                   </svg>
                 </span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="relative hidden lg:flex justify-center items-center order-1 lg:order-2"
-          >
-            <div
-              class="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
-            ></div>
-
-            <div class="relative w-full h-[500px]">
-              <div
-                id="shape"
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-80 bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700 p-4 rotate-3 hover:rotate-0 transition-transform duration-500 z-20"
-              >
-                <div
-                  class="w-full h-full bg-gray-100 dark:bg-gray-700 rounded-2xl flex items-center justify-center"
-                >
-                  <span
-                    id="shape-text"
-                    class="text-8xl font-black text-gray-300 dark:text-gray-600 transition-all duration-1000"
-                    >K</span
-                  >
-                </div>
               </div>
             </div>
           </div>
